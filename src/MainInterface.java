@@ -5,6 +5,7 @@ import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.UIManager;
 
 /*
@@ -37,6 +38,12 @@ public class MainInterface extends javax.swing.JFrame {
         //cart path
         cartActive = new ImageIcon("Assets\\\\cart_active.png");
         defaultCart = new ImageIcon("Assets\\\\cart.png");
+        
+                homeTab.setBorder(BorderFactory.createCompoundBorder(
+                    BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED),
+                    homeTab.getBorder()
+                ));
+ 
     }   
 
     /**
@@ -368,7 +375,7 @@ public class MainInterface extends javax.swing.JFrame {
                     BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED),
                     homeTab.getBorder()
                 ));
- 
+        resetTabBorders(homeTab);
     }//GEN-LAST:event_homeTabFocusGained
 
     private void homeTabFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_homeTabFocusLost
@@ -381,6 +388,7 @@ public class MainInterface extends javax.swing.JFrame {
                 BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED),
                 petTab.getBorder()
         ));
+        resetTabBorders(petTab);
     }//GEN-LAST:event_petTabFocusGained
 
     private void petTabFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_petTabFocusLost
@@ -392,6 +400,7 @@ public class MainInterface extends javax.swing.JFrame {
                 BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED),
                 settingTab.getBorder()
         ));
+        resetTabBorders(settingTab);
     }//GEN-LAST:event_settingTabFocusGained
 
     private void settingTabFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_settingTabFocusLost
@@ -418,9 +427,20 @@ public class MainInterface extends javax.swing.JFrame {
         cartTab.setIcon(defaultCart);
     }//GEN-LAST:event_cartTabFocusLost
 
-    /**
-     * @param args the command line arguments
-     */
+    //resetting the Tab underline borders every time another tab is press
+    //Helpful for keeping a default active link on Home Tab
+    private void resetTabBorders(JButton focusedButton) {
+        // Reset the borders of all tab buttons except the focused one
+        if (focusedButton != homeTab) {
+            homeTab.setBorder(UIManager.getBorder("Button.border"));
+        }
+        if (focusedButton != petTab) {
+            petTab.setBorder(UIManager.getBorder("Button.border"));
+        }
+        if (focusedButton != settingTab) {
+            settingTab.setBorder(UIManager.getBorder("Button.border"));
+        }
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
