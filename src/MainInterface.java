@@ -25,11 +25,16 @@ public class MainInterface extends javax.swing.JFrame {
     private Icon cartActive;
     private Icon defaultCart;
     
+
+    
     CardLayout cardLayout;
+    CardLayout cardLayoutPets;
+    
     public MainInterface() {
         initComponents();
         
         cardLayout = (CardLayout)(panelCards.getLayout());
+        cardLayoutPets = (CardLayout) (animalPanels.getLayout());
         
         //heart path
         heartIconActive = new ImageIcon("Assets\\\\heart_active.png");
@@ -39,9 +44,16 @@ public class MainInterface extends javax.swing.JFrame {
         cartActive = new ImageIcon("Assets\\\\cart_active.png");
         defaultCart = new ImageIcon("Assets\\\\cart.png");
         
+                //Set Home Tab as Active Page
                 homeTab.setBorder(BorderFactory.createCompoundBorder(
                     BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED),
                     homeTab.getBorder()
+                ));
+                
+                
+                dogBtn.setBorder(BorderFactory.createCompoundBorder(
+                    BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED),
+                    dogBtn.getBorder()
                 ));
  
     }   
@@ -66,15 +78,88 @@ public class MainInterface extends javax.swing.JFrame {
         settingTab = new javax.swing.JButton();
         panelCards = new javax.swing.JPanel();
         panelCard1 = new javax.swing.JPanel();
+        hello = new javax.swing.JLabel();
+        pName = new javax.swing.JLabel();
+        discord = new javax.swing.JPanel();
+        joinDC = new javax.swing.JLabel();
+        discordBG = new javax.swing.JLabel();
+        aboutus = new javax.swing.JPanel();
+        abouttext = new javax.swing.JLabel();
+        aboutimg = new javax.swing.JLabel();
+        community = new javax.swing.JPanel();
+        communitytext = new javax.swing.JLabel();
+        communityBG = new javax.swing.JLabel();
+        dogNews = new javax.swing.JPanel();
+        dognewpic = new javax.swing.JLabel();
+        catnewpic = new javax.swing.JLabel();
+        hamsternewpic = new javax.swing.JLabel();
+        catnewtitle = new javax.swing.JLabel();
+        hamsternewtitle = new javax.swing.JLabel();
+        dognewtitle1 = new javax.swing.JLabel();
+        catnewlabel1 = new javax.swing.JLabel();
+        hamsternewlabel2 = new javax.swing.JLabel();
+        dognewlabel = new javax.swing.JLabel();
+        dognew = new javax.swing.JButton();
+        catnew = new javax.swing.JButton();
+        hamsternew = new javax.swing.JButton();
         panelCard2 = new javax.swing.JPanel();
+        jSplitPane2 = new javax.swing.JSplitPane();
+        petnav = new javax.swing.JPanel();
+        dogBtn = new javax.swing.JButton();
+        catBtn = new javax.swing.JButton();
+        birdBtn = new javax.swing.JButton();
+        fishBtn = new javax.swing.JButton();
+        animalPanels = new javax.swing.JPanel();
+        dogPanel = new javax.swing.JPanel();
+        doglist = new javax.swing.JPanel();
+        firstDog = new javax.swing.JPanel();
+        dog1image = new javax.swing.JLabel();
+        dog1name = new javax.swing.JLabel();
+        gendercombo = new javax.swing.JComboBox<>();
+        qtyField = new javax.swing.JTextField();
+        incrementbtn = new javax.swing.JButton();
+        decrementbtn = new javax.swing.JButton();
+        addtocartbtn = new javax.swing.JButton();
+        addtofavoritebtn = new javax.swing.JButton();
+        secondDog = new javax.swing.JPanel();
+        dog2image = new javax.swing.JLabel();
+        dog2name = new javax.swing.JLabel();
+        gendercombo2 = new javax.swing.JComboBox<>();
+        qtyField2 = new javax.swing.JTextField();
+        incrementbtn2 = new javax.swing.JButton();
+        decrementbtn2 = new javax.swing.JButton();
+        addtocartbtn2 = new javax.swing.JButton();
+        addtofavoritebtn2 = new javax.swing.JButton();
+        thirdDog = new javax.swing.JPanel();
+        dog3image = new javax.swing.JLabel();
+        dog3name = new javax.swing.JLabel();
+        gendercombo3 = new javax.swing.JComboBox<>();
+        decrementbtn3 = new javax.swing.JButton();
+        qtyField3 = new javax.swing.JTextField();
+        incrementbtn3 = new javax.swing.JButton();
+        addtocartbtn3 = new javax.swing.JButton();
+        addtofavoritebtn3 = new javax.swing.JButton();
+        fourthDog = new javax.swing.JPanel();
+        dog4image = new javax.swing.JLabel();
+        dog4name = new javax.swing.JLabel();
+        gendercombo4 = new javax.swing.JComboBox<>();
+        decrementbtn4 = new javax.swing.JButton();
+        qtyField4 = new javax.swing.JTextField();
+        incrementbtn4 = new javax.swing.JButton();
+        addtocartbtn4 = new javax.swing.JButton();
+        addtofavoritebtn4 = new javax.swing.JButton();
+        catPanel = new javax.swing.JPanel();
+        birdPanel = new javax.swing.JPanel();
+        fishPanel = new javax.swing.JPanel();
         panelCard3 = new javax.swing.JPanel();
         panelCard4 = new javax.swing.JPanel();
         panelCard5 = new javax.swing.JPanel();
         panelCard6 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        jSplitPane1.setDividerLocation(90);
+        jSplitPane1.setDividerLocation(80);
         jSplitPane1.setDividerSize(0);
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
         jSplitPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -83,6 +168,7 @@ public class MainInterface extends javax.swing.JFrame {
         Navbar.setBackground(new java.awt.Color(40, 40, 40));
 
         logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\logo\\Animalia Logo.png")); // NOI18N
+        logo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         profileTab.setBackground(new java.awt.Color(40, 40, 40));
         profileTab.setForeground(new java.awt.Color(40, 40, 40));
@@ -136,7 +222,7 @@ public class MainInterface extends javax.swing.JFrame {
             }
         });
 
-        homeTab.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        homeTab.setFont(new java.awt.Font("Arial", 0, 28)); // NOI18N
         homeTab.setForeground(new java.awt.Color(139, 139, 139));
         homeTab.setText("Home");
         homeTab.setBorder(null);
@@ -155,7 +241,7 @@ public class MainInterface extends javax.swing.JFrame {
             }
         });
 
-        petTab.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        petTab.setFont(new java.awt.Font("Arial", 0, 28)); // NOI18N
         petTab.setForeground(new java.awt.Color(139, 139, 139));
         petTab.setText("Pets");
         petTab.setBorder(null);
@@ -174,7 +260,7 @@ public class MainInterface extends javax.swing.JFrame {
             }
         });
 
-        settingTab.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        settingTab.setFont(new java.awt.Font("Arial", 0, 28)); // NOI18N
         settingTab.setForeground(new java.awt.Color(139, 139, 139));
         settingTab.setText("Settings");
         settingTab.setBorder(null);
@@ -201,12 +287,12 @@ public class MainInterface extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(logo)
                 .addGap(76, 76, 76)
-                .addComponent(homeTab, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(petTab, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(settingTab, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 356, Short.MAX_VALUE)
+                .addComponent(homeTab, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(petTab, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(settingTab, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 291, Short.MAX_VALUE)
                 .addComponent(favoriteTab)
                 .addGap(29, 29, 29)
                 .addComponent(cartTab)
@@ -229,12 +315,13 @@ public class MainInterface extends javax.swing.JFrame {
                         .addGroup(NavbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(NavbarLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(NavbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(NavbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
                                     .addComponent(homeTab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(petTab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(settingTab, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(settingTab, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(3, 3, 3))
                             .addComponent(logo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(profileTab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
+                            .addComponent(profileTab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())))
         );
 
@@ -244,32 +331,807 @@ public class MainInterface extends javax.swing.JFrame {
         panelCards.setForeground(new java.awt.Color(204, 204, 204));
         panelCards.setLayout(new java.awt.CardLayout());
 
-        panelCard1.setBackground(new java.awt.Color(102, 51, 0));
+        panelCard1.setBackground(new java.awt.Color(18, 18, 18));
+        panelCard1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout panelCard1Layout = new javax.swing.GroupLayout(panelCard1);
-        panelCard1.setLayout(panelCard1Layout);
-        panelCard1Layout.setHorizontalGroup(
-            panelCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1182, Short.MAX_VALUE)
-        );
-        panelCard1Layout.setVerticalGroup(
-            panelCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
-        );
+        hello.setFont(new java.awt.Font("Arial Black", 0, 48)); // NOI18N
+        hello.setForeground(new java.awt.Color(255, 255, 255));
+        hello.setText("HELLO,");
+        panelCard1.add(hello, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 236, 64));
+
+        pName.setFont(new java.awt.Font("Arial Black", 0, 52)); // NOI18N
+        pName.setForeground(new java.awt.Color(255, 255, 255));
+        pName.setText("SELWYN");
+        panelCard1.add(pName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 300, 70));
+
+        discord.setBackground(new java.awt.Color(18, 18, 18));
+        discord.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        discord.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        joinDC.setFont(new java.awt.Font("Arial Black", 1, 40)); // NOI18N
+        joinDC.setForeground(new java.awt.Color(144, 141, 150));
+        joinDC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        joinDC.setText("JOIN OUR DISCORD");
+        joinDC.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                joinDCMouseMoved(evt);
+            }
+        });
+        joinDC.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                joinDCFocusGained(evt);
+            }
+        });
+        joinDC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                joinDCMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                joinDCMouseExited(evt);
+            }
+        });
+        discord.add(joinDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 580, 50));
+
+        discordBG.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        discordBG.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\Images\\discord-bg.png")); // NOI18N
+        discordBG.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        discordBG.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                discordBGMouseMoved(evt);
+            }
+        });
+        discord.add(discordBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 300));
+
+        panelCard1.add(discord, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 46, -1, -1));
+
+        aboutus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        abouttext.setFont(new java.awt.Font("Arial Black", 1, 22)); // NOI18N
+        abouttext.setForeground(new java.awt.Color(144, 141, 150));
+        abouttext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        abouttext.setText("Learn more about us");
+        abouttext.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                abouttextMouseMoved(evt);
+            }
+        });
+        abouttext.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                abouttextMouseExited(evt);
+            }
+        });
+        aboutus.add(abouttext, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 230, 280, 60));
+
+        aboutimg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        aboutimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\Images\\Animal-1.png")); // NOI18N
+        aboutimg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        aboutus.add(aboutimg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, -1));
+
+        panelCard1.add(aboutus, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 364, -1, -1));
+
+        community.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        communitytext.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        communitytext.setForeground(new java.awt.Color(144, 141, 150));
+        communitytext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        communitytext.setText("Meetups");
+        communitytext.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                communitytextMouseMoved(evt);
+            }
+        });
+        communitytext.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                communitytextMouseExited(evt);
+            }
+        });
+        community.add(communitytext, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 250, 60));
+
+        communityBG.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        communityBG.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\Images\\Community.png")); // NOI18N
+        communityBG.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        community.add(communityBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 285, -1));
+
+        panelCard1.add(community, new org.netbeans.lib.awtextra.AbsoluteConstraints(868, 364, -1, -1));
+
+        dogNews.setBackground(new java.awt.Color(18, 18, 18));
+        dogNews.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        dognewpic.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\Images\\Doberman.png")); // NOI18N
+        dogNews.add(dognewpic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 180, 170));
+
+        catnewpic.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\Images\\Bengal.png")); // NOI18N
+        dogNews.add(catnewpic, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 140, 200));
+
+        hamsternewpic.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\Images\\Syrian-Hamster.png")); // NOI18N
+        dogNews.add(hamsternewpic, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 280, -1, -1));
+
+        catnewtitle.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        catnewtitle.setForeground(new java.awt.Color(255, 255, 255));
+        catnewtitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        catnewtitle.setText("Syrian Hamster");
+        dogNews.add(catnewtitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 240, -1));
+
+        hamsternewtitle.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        hamsternewtitle.setForeground(new java.awt.Color(255, 255, 255));
+        hamsternewtitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hamsternewtitle.setText("Bengal Cat");
+        dogNews.add(hamsternewtitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 170, -1));
+
+        dognewtitle1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        dognewtitle1.setForeground(new java.awt.Color(255, 255, 255));
+        dognewtitle1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dognewtitle1.setText("Doberman");
+        dogNews.add(dognewtitle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 170, -1));
+
+        catnewlabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        catnewlabel1.setForeground(new java.awt.Color(255, 255, 255));
+        catnewlabel1.setText("Syrian hamsters are one of the most common types of hamsters that are kept as pets. These creatures can grow up to 6 inches in length, making them one of the largest species as well.");
+        dogNews.add(catnewlabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 290, 60));
+
+        hamsternewlabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        hamsternewlabel2.setForeground(new java.awt.Color(255, 255, 255));
+        hamsternewlabel2.setText("Bengal cat originated as a cross between the Asian leopard cat and a domesticated cat.");
+        dogNews.add(hamsternewlabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 290, 60));
+
+        dognewlabel.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        dognewlabel.setForeground(new java.awt.Color(255, 255, 255));
+        dognewlabel.setText("The Dobermann is a German breed of medium-large domestic dog of pinscher type. ");
+        dogNews.add(dognewlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 290, 60));
+
+        dognew.setBackground(new java.awt.Color(63, 63, 63));
+        dognew.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        dognew.setBorderPainted(false);
+        dognew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dognewActionPerformed(evt);
+            }
+        });
+        dogNews.add(dognew, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 470, 120));
+
+        catnew.setBackground(new java.awt.Color(63, 63, 63));
+        catnew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                catnewActionPerformed(evt);
+            }
+        });
+        dogNews.add(catnew, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 470, 120));
+
+        hamsternew.setBackground(new java.awt.Color(63, 63, 63));
+        hamsternew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hamsternewActionPerformed(evt);
+            }
+        });
+        dogNews.add(hamsternew, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 339, 470, 130));
+
+        panelCard1.add(dogNews, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 480, 470));
 
         panelCards.add(panelCard1, "card1");
 
-        panelCard2.setBackground(new java.awt.Color(153, 153, 0));
+        panelCard2.setBackground(new java.awt.Color(18, 18, 18));
+
+        jSplitPane2.setDividerLocation(50);
+        jSplitPane2.setDividerSize(0);
+        jSplitPane2.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+
+        petnav.setBackground(new java.awt.Color(26, 22, 37));
+
+        dogBtn.setBackground(new java.awt.Color(26, 22, 37));
+        dogBtn.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        dogBtn.setForeground(new java.awt.Color(144, 141, 150));
+        dogBtn.setText("Dogs");
+        dogBtn.setContentAreaFilled(false);
+        dogBtn.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                dogBtnFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                dogBtnFocusLost(evt);
+            }
+        });
+        dogBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dogBtnActionPerformed(evt);
+            }
+        });
+
+        catBtn.setBackground(new java.awt.Color(26, 22, 37));
+        catBtn.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        catBtn.setForeground(new java.awt.Color(144, 141, 150));
+        catBtn.setText("Cats");
+        catBtn.setBorder(null);
+        catBtn.setContentAreaFilled(false);
+        catBtn.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                catBtnFocusGained(evt);
+            }
+        });
+        catBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                catBtnActionPerformed(evt);
+            }
+        });
+
+        birdBtn.setBackground(new java.awt.Color(26, 22, 37));
+        birdBtn.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        birdBtn.setForeground(new java.awt.Color(144, 141, 150));
+        birdBtn.setText("Birds");
+        birdBtn.setBorder(null);
+        birdBtn.setContentAreaFilled(false);
+        birdBtn.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                birdBtnFocusGained(evt);
+            }
+        });
+        birdBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                birdBtnActionPerformed(evt);
+            }
+        });
+
+        fishBtn.setBackground(new java.awt.Color(26, 22, 37));
+        fishBtn.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        fishBtn.setForeground(new java.awt.Color(144, 141, 150));
+        fishBtn.setText("Fishes");
+        fishBtn.setBorder(null);
+        fishBtn.setContentAreaFilled(false);
+        fishBtn.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                fishBtnFocusGained(evt);
+            }
+        });
+        fishBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fishBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout petnavLayout = new javax.swing.GroupLayout(petnav);
+        petnav.setLayout(petnavLayout);
+        petnavLayout.setHorizontalGroup(
+            petnavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(petnavLayout.createSequentialGroup()
+                .addGap(156, 156, 156)
+                .addComponent(dogBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(catBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(birdBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fishBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(363, Short.MAX_VALUE))
+        );
+        petnavLayout.setVerticalGroup(
+            petnavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(petnavLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(petnavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dogBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(catBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(birdBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fishBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jSplitPane2.setTopComponent(petnav);
+
+        animalPanels.setBackground(new java.awt.Color(18, 18, 18));
+        animalPanels.setLayout(new java.awt.CardLayout());
+
+        dogPanel.setBackground(new java.awt.Color(18, 18, 18));
+        dogPanel.setAutoscrolls(true);
+
+        doglist.setBackground(new java.awt.Color(18, 18, 18));
+        doglist.setLayout(new java.awt.GridLayout(2, 2, 20, 20));
+
+        firstDog.setBackground(new java.awt.Color(40, 40, 40));
+        firstDog.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 2));
+
+        dog1image.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\Images\\Dogs\\DobbermanPic.png")); // NOI18N
+
+        dog1name.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        dog1name.setForeground(new java.awt.Color(255, 255, 255));
+        dog1name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dog1name.setText("Dobberman");
+
+        gendercombo.setBackground(new java.awt.Color(94, 67, 243));
+        gendercombo.setForeground(new java.awt.Color(0, 0, 0));
+        gendercombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        gendercombo.setToolTipText("");
+        gendercombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gendercomboActionPerformed(evt);
+            }
+        });
+
+        qtyField.setBackground(new java.awt.Color(40, 40, 40));
+        qtyField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        qtyField.setForeground(new java.awt.Color(255, 255, 255));
+        qtyField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        qtyField.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        incrementbtn.setBackground(new java.awt.Color(122, 90, 245));
+        incrementbtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\plus.png")); // NOI18N
+        incrementbtn.setBorder(null);
+        incrementbtn.setFocusPainted(false);
+        incrementbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                incrementbtnActionPerformed(evt);
+            }
+        });
+
+        decrementbtn.setBackground(new java.awt.Color(122, 90, 245));
+        decrementbtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\minus.png")); // NOI18N
+        decrementbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                decrementbtnActionPerformed(evt);
+            }
+        });
+
+        addtocartbtn.setBackground(new java.awt.Color(94, 67, 243));
+        addtocartbtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\shopping-cart.png")); // NOI18N
+        addtocartbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addtocartbtnActionPerformed(evt);
+            }
+        });
+
+        addtofavoritebtn.setBackground(new java.awt.Color(166, 136, 250));
+        addtofavoritebtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\like.png")); // NOI18N
+
+        javax.swing.GroupLayout firstDogLayout = new javax.swing.GroupLayout(firstDog);
+        firstDog.setLayout(firstDogLayout);
+        firstDogLayout.setHorizontalGroup(
+            firstDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(firstDogLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(dog1name, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, firstDogLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(firstDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(firstDogLayout.createSequentialGroup()
+                        .addComponent(addtofavoritebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(addtocartbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(firstDogLayout.createSequentialGroup()
+                        .addComponent(decrementbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(firstDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(gendercombo, 0, 132, Short.MAX_VALUE)
+                            .addComponent(qtyField))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(incrementbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27))
+            .addComponent(dog1image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        firstDogLayout.setVerticalGroup(
+            firstDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(firstDogLayout.createSequentialGroup()
+                .addComponent(dog1image)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dog1name, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(gendercombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(firstDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(firstDogLayout.createSequentialGroup()
+                        .addComponent(decrementbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(qtyField, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(firstDogLayout.createSequentialGroup()
+                        .addComponent(incrementbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(firstDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(addtofavoritebtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addtocartbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
+        );
+
+        doglist.add(firstDog);
+
+        secondDog.setBackground(new java.awt.Color(40, 40, 40));
+        secondDog.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 2));
+
+        dog2image.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\Images\\Dogs\\DobbermanPic.png")); // NOI18N
+
+        dog2name.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        dog2name.setForeground(new java.awt.Color(255, 255, 255));
+        dog2name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dog2name.setText("Dobberman");
+
+        gendercombo2.setBackground(new java.awt.Color(94, 67, 243));
+        gendercombo2.setForeground(new java.awt.Color(0, 0, 0));
+        gendercombo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        gendercombo2.setToolTipText("");
+        gendercombo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gendercombo2ActionPerformed(evt);
+            }
+        });
+
+        qtyField2.setBackground(new java.awt.Color(40, 40, 40));
+        qtyField2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        qtyField2.setForeground(new java.awt.Color(255, 255, 255));
+        qtyField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        qtyField2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        incrementbtn2.setBackground(new java.awt.Color(122, 90, 245));
+        incrementbtn2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\plus.png")); // NOI18N
+        incrementbtn2.setBorder(null);
+        incrementbtn2.setFocusPainted(false);
+        incrementbtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                incrementbtn2ActionPerformed(evt);
+            }
+        });
+
+        decrementbtn2.setBackground(new java.awt.Color(122, 90, 245));
+        decrementbtn2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\minus.png")); // NOI18N
+        decrementbtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                decrementbtn2ActionPerformed(evt);
+            }
+        });
+
+        addtocartbtn2.setBackground(new java.awt.Color(94, 67, 243));
+        addtocartbtn2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\shopping-cart.png")); // NOI18N
+        addtocartbtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addtocartbtn2ActionPerformed(evt);
+            }
+        });
+
+        addtofavoritebtn2.setBackground(new java.awt.Color(166, 136, 250));
+        addtofavoritebtn2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\like.png")); // NOI18N
+
+        javax.swing.GroupLayout secondDogLayout = new javax.swing.GroupLayout(secondDog);
+        secondDog.setLayout(secondDogLayout);
+        secondDogLayout.setHorizontalGroup(
+            secondDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(secondDogLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(dog2name, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, secondDogLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(secondDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(secondDogLayout.createSequentialGroup()
+                        .addComponent(addtofavoritebtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(addtocartbtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(secondDogLayout.createSequentialGroup()
+                        .addComponent(decrementbtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(secondDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(gendercombo2, 0, 132, Short.MAX_VALUE)
+                            .addComponent(qtyField2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(incrementbtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27))
+            .addComponent(dog2image, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        );
+        secondDogLayout.setVerticalGroup(
+            secondDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(secondDogLayout.createSequentialGroup()
+                .addComponent(dog2image)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dog2name, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(gendercombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(secondDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(secondDogLayout.createSequentialGroup()
+                        .addComponent(decrementbtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(qtyField2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(secondDogLayout.createSequentialGroup()
+                        .addComponent(incrementbtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(secondDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(addtofavoritebtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addtocartbtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
+        );
+
+        doglist.add(secondDog);
+
+        thirdDog.setBackground(new java.awt.Color(40, 40, 40));
+        thirdDog.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 2));
+
+        dog3image.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\Images\\Dogs\\DobbermanPic.png")); // NOI18N
+
+        dog3name.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        dog3name.setForeground(new java.awt.Color(255, 255, 255));
+        dog3name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dog3name.setText("Dobberman");
+
+        gendercombo3.setBackground(new java.awt.Color(94, 67, 243));
+        gendercombo3.setForeground(new java.awt.Color(0, 0, 0));
+        gendercombo3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        gendercombo3.setToolTipText("");
+        gendercombo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gendercombo3ActionPerformed(evt);
+            }
+        });
+
+        decrementbtn3.setBackground(new java.awt.Color(122, 90, 245));
+        decrementbtn3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\minus.png")); // NOI18N
+        decrementbtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                decrementbtn3ActionPerformed(evt);
+            }
+        });
+
+        qtyField3.setBackground(new java.awt.Color(40, 40, 40));
+        qtyField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        qtyField3.setForeground(new java.awt.Color(255, 255, 255));
+        qtyField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        qtyField3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        incrementbtn3.setBackground(new java.awt.Color(122, 90, 245));
+        incrementbtn3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\plus.png")); // NOI18N
+        incrementbtn3.setBorder(null);
+        incrementbtn3.setFocusPainted(false);
+        incrementbtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                incrementbtn3ActionPerformed(evt);
+            }
+        });
+
+        addtocartbtn3.setBackground(new java.awt.Color(94, 67, 243));
+        addtocartbtn3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\shopping-cart.png")); // NOI18N
+        addtocartbtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addtocartbtn3ActionPerformed(evt);
+            }
+        });
+
+        addtofavoritebtn3.setBackground(new java.awt.Color(166, 136, 250));
+        addtofavoritebtn3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\like.png")); // NOI18N
+
+        javax.swing.GroupLayout thirdDogLayout = new javax.swing.GroupLayout(thirdDog);
+        thirdDog.setLayout(thirdDogLayout);
+        thirdDogLayout.setHorizontalGroup(
+            thirdDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(thirdDogLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(dog3name, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, thirdDogLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(thirdDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(thirdDogLayout.createSequentialGroup()
+                        .addComponent(addtofavoritebtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(addtocartbtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(thirdDogLayout.createSequentialGroup()
+                        .addComponent(decrementbtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(thirdDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(gendercombo3, 0, 132, Short.MAX_VALUE)
+                            .addComponent(qtyField3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(incrementbtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27))
+            .addComponent(dog3image, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        );
+        thirdDogLayout.setVerticalGroup(
+            thirdDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(thirdDogLayout.createSequentialGroup()
+                .addComponent(dog3image)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dog3name, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(gendercombo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(thirdDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(thirdDogLayout.createSequentialGroup()
+                        .addComponent(decrementbtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(qtyField3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(thirdDogLayout.createSequentialGroup()
+                        .addComponent(incrementbtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(thirdDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(addtofavoritebtn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addtocartbtn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
+        );
+
+        doglist.add(thirdDog);
+
+        fourthDog.setBackground(new java.awt.Color(40, 40, 40));
+        fourthDog.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 2));
+
+        dog4image.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\Images\\Dogs\\DobbermanPic.png")); // NOI18N
+
+        dog4name.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        dog4name.setForeground(new java.awt.Color(255, 255, 255));
+        dog4name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dog4name.setText("Dobberman");
+
+        gendercombo4.setBackground(new java.awt.Color(94, 67, 243));
+        gendercombo4.setForeground(new java.awt.Color(0, 0, 0));
+        gendercombo4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        gendercombo4.setToolTipText("");
+        gendercombo4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gendercombo4ActionPerformed(evt);
+            }
+        });
+
+        decrementbtn4.setBackground(new java.awt.Color(122, 90, 245));
+        decrementbtn4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\minus.png")); // NOI18N
+        decrementbtn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                decrementbtn4ActionPerformed(evt);
+            }
+        });
+
+        qtyField4.setBackground(new java.awt.Color(40, 40, 40));
+        qtyField4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        qtyField4.setForeground(new java.awt.Color(255, 255, 255));
+        qtyField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        qtyField4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        incrementbtn4.setBackground(new java.awt.Color(122, 90, 245));
+        incrementbtn4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\plus.png")); // NOI18N
+        incrementbtn4.setBorder(null);
+        incrementbtn4.setFocusPainted(false);
+        incrementbtn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                incrementbtn4ActionPerformed(evt);
+            }
+        });
+
+        addtocartbtn4.setBackground(new java.awt.Color(94, 67, 243));
+        addtocartbtn4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\shopping-cart.png")); // NOI18N
+        addtocartbtn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addtocartbtn4ActionPerformed(evt);
+            }
+        });
+
+        addtofavoritebtn4.setBackground(new java.awt.Color(166, 136, 250));
+        addtofavoritebtn4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Animalia\\Assets\\like.png")); // NOI18N
+
+        javax.swing.GroupLayout fourthDogLayout = new javax.swing.GroupLayout(fourthDog);
+        fourthDog.setLayout(fourthDogLayout);
+        fourthDogLayout.setHorizontalGroup(
+            fourthDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fourthDogLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(dog4name, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fourthDogLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(fourthDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(fourthDogLayout.createSequentialGroup()
+                        .addComponent(addtofavoritebtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(addtocartbtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(fourthDogLayout.createSequentialGroup()
+                        .addComponent(decrementbtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fourthDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(gendercombo4, 0, 132, Short.MAX_VALUE)
+                            .addComponent(qtyField4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(incrementbtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27))
+            .addComponent(dog4image, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        );
+        fourthDogLayout.setVerticalGroup(
+            fourthDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fourthDogLayout.createSequentialGroup()
+                .addComponent(dog4image)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dog4name, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(gendercombo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(fourthDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(fourthDogLayout.createSequentialGroup()
+                        .addComponent(decrementbtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(qtyField4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(fourthDogLayout.createSequentialGroup()
+                        .addComponent(incrementbtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(fourthDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(addtofavoritebtn4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addtocartbtn4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
+        );
+
+        doglist.add(fourthDog);
+
+        javax.swing.GroupLayout dogPanelLayout = new javax.swing.GroupLayout(dogPanel);
+        dogPanel.setLayout(dogPanelLayout);
+        dogPanelLayout.setHorizontalGroup(
+            dogPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1182, Short.MAX_VALUE)
+            .addGroup(dogPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dogPanelLayout.createSequentialGroup()
+                    .addGap(291, 291, 291)
+                    .addComponent(doglist, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(262, Short.MAX_VALUE)))
+        );
+        dogPanelLayout.setVerticalGroup(
+            dogPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 710, Short.MAX_VALUE)
+            .addGroup(dogPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dogPanelLayout.createSequentialGroup()
+                    .addContainerGap(68, Short.MAX_VALUE)
+                    .addComponent(doglist, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(117, Short.MAX_VALUE)))
+        );
+
+        animalPanels.add(dogPanel, "dogpanel");
+
+        catPanel.setBackground(new java.awt.Color(153, 204, 0));
+
+        javax.swing.GroupLayout catPanelLayout = new javax.swing.GroupLayout(catPanel);
+        catPanel.setLayout(catPanelLayout);
+        catPanelLayout.setHorizontalGroup(
+            catPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1182, Short.MAX_VALUE)
+        );
+        catPanelLayout.setVerticalGroup(
+            catPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 717, Short.MAX_VALUE)
+        );
+
+        animalPanels.add(catPanel, "catpanel");
+
+        birdPanel.setBackground(new java.awt.Color(255, 102, 0));
+
+        javax.swing.GroupLayout birdPanelLayout = new javax.swing.GroupLayout(birdPanel);
+        birdPanel.setLayout(birdPanelLayout);
+        birdPanelLayout.setHorizontalGroup(
+            birdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1182, Short.MAX_VALUE)
+        );
+        birdPanelLayout.setVerticalGroup(
+            birdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 717, Short.MAX_VALUE)
+        );
+
+        animalPanels.add(birdPanel, "birdpanel");
+
+        fishPanel.setBackground(new java.awt.Color(0, 204, 153));
+
+        javax.swing.GroupLayout fishPanelLayout = new javax.swing.GroupLayout(fishPanel);
+        fishPanel.setLayout(fishPanelLayout);
+        fishPanelLayout.setHorizontalGroup(
+            fishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1182, Short.MAX_VALUE)
+        );
+        fishPanelLayout.setVerticalGroup(
+            fishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 717, Short.MAX_VALUE)
+        );
+
+        animalPanels.add(fishPanel, "fishpanel");
+
+        jSplitPane2.setRightComponent(animalPanels);
 
         javax.swing.GroupLayout panelCard2Layout = new javax.swing.GroupLayout(panelCard2);
         panelCard2.setLayout(panelCard2Layout);
         panelCard2Layout.setHorizontalGroup(
             panelCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1182, Short.MAX_VALUE)
+            .addComponent(jSplitPane2)
         );
         panelCard2Layout.setVerticalGroup(
             panelCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
+            .addComponent(jSplitPane2)
         );
 
         panelCards.add(panelCard2, "card2");
@@ -284,7 +1146,7 @@ public class MainInterface extends javax.swing.JFrame {
         );
         panelCard3Layout.setVerticalGroup(
             panelCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
+            .addGap(0, 764, Short.MAX_VALUE)
         );
 
         panelCards.add(panelCard3, "card3");
@@ -297,7 +1159,7 @@ public class MainInterface extends javax.swing.JFrame {
         );
         panelCard4Layout.setVerticalGroup(
             panelCard4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
+            .addGap(0, 764, Short.MAX_VALUE)
         );
 
         panelCards.add(panelCard4, "card4");
@@ -312,7 +1174,7 @@ public class MainInterface extends javax.swing.JFrame {
         );
         panelCard5Layout.setVerticalGroup(
             panelCard5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
+            .addGap(0, 764, Short.MAX_VALUE)
         );
 
         panelCards.add(panelCard5, "card5");
@@ -327,7 +1189,7 @@ public class MainInterface extends javax.swing.JFrame {
         );
         panelCard6Layout.setVerticalGroup(
             panelCard6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
+            .addGap(0, 764, Short.MAX_VALUE)
         );
 
         panelCards.add(panelCard6, "card6");
@@ -345,7 +1207,7 @@ public class MainInterface extends javax.swing.JFrame {
             .addComponent(jSplitPane1)
         );
 
-        setSize(new java.awt.Dimension(1198, 783));
+        setSize(new java.awt.Dimension(1198, 848));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -379,7 +1241,8 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_homeTabFocusGained
 
     private void homeTabFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_homeTabFocusLost
-         homeTab.setBorder(UIManager.getBorder("Button.border"));
+            //Disable the FocusLost event listener
+//         homeTab.setBorder(UIManager.getBorder("Button.border"));
     }//GEN-LAST:event_homeTabFocusLost
 
     
@@ -392,7 +1255,7 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_petTabFocusGained
 
     private void petTabFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_petTabFocusLost
-        petTab.setBorder(UIManager.getBorder("Button.border"));
+        //Disable the focusLost since the petTab has subTabs
     }//GEN-LAST:event_petTabFocusLost
 
     private void settingTabFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_settingTabFocusGained
@@ -427,6 +1290,407 @@ public class MainInterface extends javax.swing.JFrame {
         cartTab.setIcon(defaultCart);
     }//GEN-LAST:event_cartTabFocusLost
 
+    private void joinDCFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_joinDCFocusGained
+
+    }//GEN-LAST:event_joinDCFocusGained
+
+    private void joinDCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_joinDCMouseClicked
+
+    }//GEN-LAST:event_joinDCMouseClicked
+
+    private void joinDCMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_joinDCMouseMoved
+
+        //Set the color when hovered to white
+        joinDC.setForeground(Color.WHITE);
+    }//GEN-LAST:event_joinDCMouseMoved
+
+    private void joinDCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_joinDCMouseExited
+        //Reset Color to original  
+        joinDC.setForeground(new Color(144, 141, 150)); 
+    }//GEN-LAST:event_joinDCMouseExited
+
+    private void abouttextMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_abouttextMouseMoved
+        //Set the color when hovered to white
+        abouttext.setForeground(Color.WHITE);
+    }//GEN-LAST:event_abouttextMouseMoved
+
+    private void abouttextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_abouttextMouseExited
+        //Reset Color to original  
+        abouttext.setForeground(new Color(144, 141, 150)); 
+    }//GEN-LAST:event_abouttextMouseExited
+
+    private void discordBGMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_discordBGMouseMoved
+        
+
+    }//GEN-LAST:event_discordBGMouseMoved
+
+    private void communitytextMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_communitytextMouseMoved
+        communitytext.setForeground(Color.WHITE);
+    }//GEN-LAST:event_communitytextMouseMoved
+
+    private void communitytextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_communitytextMouseExited
+        //Reset Color to original  
+        communitytext.setForeground(new Color(144, 141, 150)); 
+    }//GEN-LAST:event_communitytextMouseExited
+
+    private void hamsternewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hamsternewActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hamsternewActionPerformed
+
+    private void catnewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_catnewActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_catnewActionPerformed
+
+    private void dognewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dognewActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dognewActionPerformed
+
+    private void dogBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dogBtnActionPerformed
+        cardLayoutPets.show(animalPanels, "dogpanel");
+    }//GEN-LAST:event_dogBtnActionPerformed
+
+    private void catBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_catBtnActionPerformed
+        cardLayoutPets.show(animalPanels, "catpanel");
+    }//GEN-LAST:event_catBtnActionPerformed
+
+    private void fishBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fishBtnActionPerformed
+        cardLayoutPets.show(animalPanels, "fishpanel");
+    }//GEN-LAST:event_fishBtnActionPerformed
+
+    private void birdBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_birdBtnActionPerformed
+        cardLayoutPets.show(animalPanels, "birdpanel");
+    }//GEN-LAST:event_birdBtnActionPerformed
+
+    private void dogBtnFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dogBtnFocusGained
+                dogBtn.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED),
+                dogBtn.getBorder()
+        ));
+        resetSubBorders(dogBtn);
+    }//GEN-LAST:event_dogBtnFocusGained
+
+    private void catBtnFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_catBtnFocusGained
+                catBtn.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED),
+                catBtn.getBorder()
+        ));
+        resetSubBorders(catBtn);
+    }//GEN-LAST:event_catBtnFocusGained
+
+    private void birdBtnFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_birdBtnFocusGained
+                birdBtn.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED),
+                birdBtn.getBorder()
+        ));
+        resetSubBorders(birdBtn);
+    }//GEN-LAST:event_birdBtnFocusGained
+
+    private void dogBtnFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dogBtnFocusLost
+    }//GEN-LAST:event_dogBtnFocusLost
+
+    private void fishBtnFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fishBtnFocusGained
+                fishBtn.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED),
+                fishBtn.getBorder()
+        ));
+        resetSubBorders(fishBtn);
+    }//GEN-LAST:event_fishBtnFocusGained
+
+    private void gendercomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gendercomboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gendercomboActionPerformed
+
+    private void addtocartbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addtocartbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addtocartbtnActionPerformed
+    
+    //Function to decrement quantity
+    public void decrementQty(){
+            try {
+                // Retrieve the current quantity from the text field
+                String currentQtyString = qtyField.getText();
+
+                // Handle empty or null string in qtyField
+                if (currentQtyString.isEmpty()) {
+                    currentQtyString = "0";
+                    qtyField.setText(currentQtyString);
+                }
+
+                // Convert the current quantity to an integer
+                int currentQty = Integer.parseInt(currentQtyString);
+
+                // Check if decrementing is possible
+                if (currentQty > 0) {
+                    // Decrement the quantity by one
+                    int newQty = currentQty - 1;
+                    // Set the new quantity back to the text field
+                    qtyField.setText(String.valueOf(newQty));
+                } else {
+                    // Provide feedback for attempting to decrement below 0
+                    System.err.println("Cannot decrement: Quantity is already at 0");
+                }
+
+            } catch (NumberFormatException e) {
+                // Handle invalid input by resetting qtyField to 0
+                System.err.println("Error: Invalid number format in qtyField. Resetting to 0.");
+                qtyField.setText("0");
+            }
+    }
+    
+    private void decrementbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decrementbtnActionPerformed
+        //Function to Implement decrementQty
+        decrementQty();
+        
+    }//GEN-LAST:event_decrementbtnActionPerformed
+
+    // Function to handle the add button press
+    public void incrementQty() {
+
+            try {
+                // Retrieve the current quantity from the text field
+                String currentQtyString = qtyField.getText();
+                
+                if (currentQtyString.isEmpty()) {
+                    // Set the text field to the initial value (0)
+                    currentQtyString = "0";
+                    qtyField.setText(currentQtyString);
+                }             
+                
+                System.out.println("Current value in qtyField: " + currentQtyString);
+                int currentQty = Integer.parseInt(currentQtyString);
+
+                // Increment the quantity by one
+                int newQty = currentQty + 1;
+
+                // Set the new quantity back to the text field
+                qtyField.setText(String.valueOf(newQty));
+            } catch (NumberFormatException e) {
+                // Handle invalid input, though it should not occur since the field is controlled by the application
+                System.err.println("Error: Invalid number format in qtyField. Please check the initial value.");
+                qtyField.setText("0");
+            }
+
+    }
+    private void incrementbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incrementbtnActionPerformed
+        //Function the IncrementQty
+        incrementQty();
+        
+        
+    }//GEN-LAST:event_incrementbtnActionPerformed
+
+    private void gendercombo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gendercombo2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gendercombo2ActionPerformed
+
+    // Function to handle the add button press
+    public void incrementQty2() {
+
+            try {
+                // Retrieve the current quantity from the text field
+                String currentQtyString = qtyField2.getText();
+                
+                if (currentQtyString.isEmpty()) {
+                    // Set the text field to the initial value (0)
+                    currentQtyString = "0";
+                    qtyField2.setText(currentQtyString);
+                }             
+                
+                System.out.println("Current value in qtyField: " + currentQtyString);
+                int currentQty = Integer.parseInt(currentQtyString);
+
+                // Increment the quantity by one
+                int newQty = currentQty + 1;
+
+                // Set the new quantity back to the text field
+                qtyField2.setText(String.valueOf(newQty));
+            } catch (NumberFormatException e) {
+                // Handle invalid input, though it should not occur since the field is controlled by the application
+                System.err.println("Error: Invalid number format in qtyField. Please check the initial value.");
+                qtyField2.setText("0");
+            }
+
+    }    
+    private void incrementbtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incrementbtn2ActionPerformed
+           incrementQty2();
+    }//GEN-LAST:event_incrementbtn2ActionPerformed
+
+    //Function to decrement quantity
+    public void decrementQty2(){
+            try {
+                // Retrieve the current quantity from the text field
+                String currentQtyString = qtyField2.getText();
+
+                // Handle empty or null string in qtyField
+                if (currentQtyString.isEmpty()) {
+                    currentQtyString = "0";
+                    qtyField2.setText(currentQtyString);
+                }
+
+                // Convert the current quantity to an integer
+                int currentQty = Integer.parseInt(currentQtyString);
+
+                // Check if decrementing is possible
+                if (currentQty > 0) {
+                    // Decrement the quantity by one
+                    int newQty = currentQty - 1;
+                    // Set the new quantity back to the text field
+                    qtyField2.setText(String.valueOf(newQty));
+                } else {
+                    // Provide feedback for attempting to decrement below 0
+                    System.err.println("Cannot decrement: Quantity is already at 0");
+                }
+
+            } catch (NumberFormatException e) {
+                // Handle invalid input by resetting qtyField to 0
+                System.err.println("Error: Invalid number format in qtyField. Resetting to 0.");
+                qtyField2.setText("0");
+            }
+    }
+    
+    private void decrementbtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decrementbtn2ActionPerformed
+        decrementQty2();
+    }//GEN-LAST:event_decrementbtn2ActionPerformed
+
+    private void addtocartbtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addtocartbtn2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addtocartbtn2ActionPerformed
+
+    private void gendercombo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gendercombo3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gendercombo3ActionPerformed
+
+    public void decrementQty3(){
+        try {
+            String currentQtyString = qtyField3.getText();
+            
+            if (currentQtyString.isEmpty()) {
+                currentQtyString = "0";
+                qtyField3.setText(currentQtyString);
+            }
+            
+            System.out.println("Current value in qtyField: " + currentQtyString);
+            int currentQty = Integer.parseInt(currentQtyString);
+            
+            if (currentQty > 0) {
+                int newQty = currentQty - 1;
+                qtyField3.setText(String.valueOf(newQty));
+            } else {
+                System.err.println("Cannot decrement: Quantity is already at 0");
+            }
+        } catch (NumberFormatException e) {
+            // Handle invalid input by resetting qtyField to 0
+                System.err.println("Error: Invalid number format in qtyField. Resetting to 0.");
+                qtyField2.setText("0");
+        }
+    }
+    private void decrementbtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decrementbtn3ActionPerformed
+        decrementQty3();
+    }//GEN-LAST:event_decrementbtn3ActionPerformed
+    // Function to handle the add button press
+    public void incrementQty3() {
+
+            try {
+                // Retrieve the current quantity from the text field
+                String currentQtyString = qtyField3.getText();
+                
+                if (currentQtyString.isEmpty()) {
+                    // Set the text field to the initial value (0)
+                    currentQtyString = "0";
+                    qtyField3.setText(currentQtyString);
+                }             
+                
+                System.out.println("Current value in qtyField: " + currentQtyString);
+                int currentQty = Integer.parseInt(currentQtyString);
+
+                // Increment the quantity by one
+                int newQty = currentQty + 1;
+
+                // Set the new quantity back to the text field
+                qtyField3.setText(String.valueOf(newQty));
+            } catch (NumberFormatException e) {
+                // Handle invalid input, though it should not occur since the field is controlled by the application
+                System.err.println("Error: Invalid number format in qtyField. Please check the initial value.");
+                qtyField3.setText("0");
+            }
+
+    }    
+    
+    private void incrementbtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incrementbtn3ActionPerformed
+        incrementQty3();
+    }//GEN-LAST:event_incrementbtn3ActionPerformed
+
+    private void addtocartbtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addtocartbtn3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addtocartbtn3ActionPerformed
+
+    private void gendercombo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gendercombo4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gendercombo4ActionPerformed
+    public void decrementQty4(){
+        try {
+            String currentQtyString = qtyField4.getText();
+            
+            if (currentQtyString.isEmpty()) {
+                currentQtyString = "0";
+                qtyField4.setText(currentQtyString);
+            }
+            
+            System.out.println("Current value in qtyField: " + currentQtyString);
+            int currentQty = Integer.parseInt(currentQtyString);
+            
+            if (currentQty > 0) {
+                int newQty = currentQty - 1;
+                qtyField4.setText(String.valueOf(newQty));
+            } else {
+                System.err.println("Cannot decrement: Quantity is already at 0");
+            }
+        } catch (NumberFormatException e) {
+            // Handle invalid input by resetting qtyField to 0
+                System.err.println("Error: Invalid number format in qtyField. Resetting to 0.");
+                qtyField4.setText("0");
+        }
+    }
+    private void decrementbtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decrementbtn4ActionPerformed
+        decrementQty4();
+    }//GEN-LAST:event_decrementbtn4ActionPerformed
+    // Function to handle the add button press
+    public void incrementQty4() {
+
+            try {
+                // Retrieve the current quantity from the text field
+                String currentQtyString = qtyField4.getText();
+                
+                if (currentQtyString.isEmpty()) {
+                    // Set the text field to the initial value (0)
+                    currentQtyString = "0";
+                    qtyField4.setText(currentQtyString);
+                }             
+                
+                System.out.println("Current value in qtyField: " + currentQtyString);
+                int currentQty = Integer.parseInt(currentQtyString);
+
+                // Increment the quantity by one
+                int newQty = currentQty + 1;
+
+                // Set the new quantity back to the text field
+                qtyField4.setText(String.valueOf(newQty));
+            } catch (NumberFormatException e) {
+                // Handle invalid input, though it should not occur since the field is controlled by the application
+                System.err.println("Error: Invalid number format in qtyField. Please check the initial value.");
+                qtyField4.setText("0");
+            }
+
+    }    
+    private void incrementbtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incrementbtn4ActionPerformed
+        incrementQty4();
+    }//GEN-LAST:event_incrementbtn4ActionPerformed
+
+    private void addtocartbtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addtocartbtn4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addtocartbtn4ActionPerformed
+
+
+    
     //resetting the Tab underline borders every time another tab is press
     //Helpful for keeping a default active link on Home Tab
     private void resetTabBorders(JButton focusedButton) {
@@ -440,6 +1704,21 @@ public class MainInterface extends javax.swing.JFrame {
         if (focusedButton != settingTab) {
             settingTab.setBorder(UIManager.getBorder("Button.border"));
         }
+    }
+    
+    private void resetSubBorders(JButton focusedButton2){
+        if (focusedButton2 != dogBtn) {
+            dogBtn.setBorder(UIManager.getBorder("Button.border"));
+        }
+        if (focusedButton2 != catBtn) {
+            catBtn.setBorder(UIManager.getBorder("Button.border"));
+        }
+        if (focusedButton2 != birdBtn) {
+            birdBtn.setBorder(UIManager.getBorder("Button.border"));
+        }       
+        if (focusedButton2 != fishBtn) {
+            fishBtn.setBorder(UIManager.getBorder("Button.border"));
+        }     
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -475,11 +1754,76 @@ public class MainInterface extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Navbar;
+    private javax.swing.JLabel aboutimg;
+    private javax.swing.JLabel abouttext;
+    private javax.swing.JPanel aboutus;
+    private javax.swing.JButton addtocartbtn;
+    private javax.swing.JButton addtocartbtn2;
+    private javax.swing.JButton addtocartbtn3;
+    private javax.swing.JButton addtocartbtn4;
+    private javax.swing.JButton addtofavoritebtn;
+    private javax.swing.JButton addtofavoritebtn2;
+    private javax.swing.JButton addtofavoritebtn3;
+    private javax.swing.JButton addtofavoritebtn4;
+    private javax.swing.JPanel animalPanels;
+    private javax.swing.JButton birdBtn;
+    private javax.swing.JPanel birdPanel;
     private javax.swing.JButton cartTab;
+    private javax.swing.JButton catBtn;
+    private javax.swing.JPanel catPanel;
+    private javax.swing.JButton catnew;
+    private javax.swing.JLabel catnewlabel1;
+    private javax.swing.JLabel catnewpic;
+    private javax.swing.JLabel catnewtitle;
+    private javax.swing.JPanel community;
+    private javax.swing.JLabel communityBG;
+    private javax.swing.JLabel communitytext;
+    private javax.swing.JButton decrementbtn;
+    private javax.swing.JButton decrementbtn2;
+    private javax.swing.JButton decrementbtn3;
+    private javax.swing.JButton decrementbtn4;
+    private javax.swing.JPanel discord;
+    private javax.swing.JLabel discordBG;
+    private javax.swing.JLabel dog1image;
+    private javax.swing.JLabel dog1name;
+    private javax.swing.JLabel dog2image;
+    private javax.swing.JLabel dog2name;
+    private javax.swing.JLabel dog3image;
+    private javax.swing.JLabel dog3name;
+    private javax.swing.JLabel dog4image;
+    private javax.swing.JLabel dog4name;
+    private javax.swing.JButton dogBtn;
+    private javax.swing.JPanel dogNews;
+    private javax.swing.JPanel dogPanel;
+    private javax.swing.JPanel doglist;
+    private javax.swing.JButton dognew;
+    private javax.swing.JLabel dognewlabel;
+    private javax.swing.JLabel dognewpic;
+    private javax.swing.JLabel dognewtitle1;
     private javax.swing.JButton favoriteTab;
+    private javax.swing.JPanel firstDog;
+    private javax.swing.JButton fishBtn;
+    private javax.swing.JPanel fishPanel;
+    private javax.swing.JPanel fourthDog;
+    private javax.swing.JComboBox<String> gendercombo;
+    private javax.swing.JComboBox<String> gendercombo2;
+    private javax.swing.JComboBox<String> gendercombo3;
+    private javax.swing.JComboBox<String> gendercombo4;
+    private javax.swing.JButton hamsternew;
+    private javax.swing.JLabel hamsternewlabel2;
+    private javax.swing.JLabel hamsternewpic;
+    private javax.swing.JLabel hamsternewtitle;
+    private javax.swing.JLabel hello;
     private javax.swing.JButton homeTab;
+    private javax.swing.JButton incrementbtn;
+    private javax.swing.JButton incrementbtn2;
+    private javax.swing.JButton incrementbtn3;
+    private javax.swing.JButton incrementbtn4;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JSplitPane jSplitPane2;
+    private javax.swing.JLabel joinDC;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel pName;
     private javax.swing.JPanel panelCard1;
     private javax.swing.JPanel panelCard2;
     private javax.swing.JPanel panelCard3;
@@ -488,7 +1832,14 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel panelCard6;
     private javax.swing.JPanel panelCards;
     private javax.swing.JButton petTab;
+    private javax.swing.JPanel petnav;
     private javax.swing.JButton profileTab;
+    private javax.swing.JTextField qtyField;
+    private javax.swing.JTextField qtyField2;
+    private javax.swing.JTextField qtyField3;
+    private javax.swing.JTextField qtyField4;
+    private javax.swing.JPanel secondDog;
     private javax.swing.JButton settingTab;
+    private javax.swing.JPanel thirdDog;
     // End of variables declaration//GEN-END:variables
 }
